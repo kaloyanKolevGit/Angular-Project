@@ -3,16 +3,16 @@
    </head>
       <div class="wrapper">
          <nav>
-            <input type="radio" name="tab" id="home" checked>
+            <input routerLink="/home" type="radio" name="tab" id="home" checked>
             <input type="radio" name="tab" id="inbox">
             <input type="radio" name="tab" id="contact">
-            <input type="radio" name="tab" id="heart">
-            <input type="radio" name="tab" id="about">
-            <label for="home" class="home"><a routerLink="/home"><i class="fas fa-home"></i>Home</a></label>
+            <input routerLink="/login" type="radio" name="tab" id="heart">
+            <input routerLink="/register" type="radio" name="tab" id="about">
+            <label for="home" class="home"><a ><i class="fas fa-home"></i>Home</a></label>
             <label for="inbox" class="inbox"><a href="#"><i class="far fa-heart"></i>Liked</a></label>
             <label for="contact" class="contact"><a href="#"><i class="far fa-envelope"></i>Listings</a></label>
-            <label for="heart" class="heart"><a routerLink="/login"><i class="far fa-user"></i>Login</a></label>
-            <label for="about" class="about"><a routerLink="/register"><i class="far fa-user"></i>Register</a></label>
+            <label for="heart" class="heart"><a><i class="far fa-user"></i>Login</a></label>
+            <label for="about" class="about"><a><i class="far fa-user"></i>Register</a></label>
             <div class="tab"></div>
          </nav>
       </div>
