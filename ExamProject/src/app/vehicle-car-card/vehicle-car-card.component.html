@@ -1,0 +1,23 @@
+<h1>Most recent listings</h1>
+<div class="car-cards-container">
+    <div *ngFor="let carCard of carCardList" class="product-card">
+        <div class="logo-cart">
+            <!--<img src="images/logo.jpg" alt="logo">-->
+            <i class='far fa-heart'></i>
+        </div>
+        <div class="main-images">
+            <img id="carImage" src={{carCard.image}}>
+        </div>
+            <div class="shoe-details">
+                <span class="car_name">{{carCard.model}}</span>
+                <p>{{carCard.transmission}}</p>
+                <div class="year-container">
+                    <span>{{carCard.year}}</span>   
+                </div>
+        </div>
+        <div class="price">
+            <span class="price_num">${{carCard.price}}</span>
+        </div>
+        <div class="car-details-backround"></div>
+    </div>
+</div>

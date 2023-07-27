@@ -1,0 +1,13 @@
+<div class="todolist">
+    <h3>List of Works Todo:</h3>
+    <ul *ngIf="todoList.length > 0">
+        <li *ngFor="let todo of todoList" data-id={{todo}}>{{todo}}
+            <div class="tools">
+                <button (click)="onComplete($event)" class="complete"><i class="fas fa-check" aria-hidden="true"></i></button>
+                <button (click)="onEdit($event)" class="edit">EDIT</button>
+                <button (click)="onDelete($event)" class="delete"><i class="fas fa-times" aria-hidden="true"></i></button>
+            </div>
+        </li>
+    </ul>
+    <p *ngIf="todoList.length < 1" class="error-info">You don't have any ToDos in the list</p>
+</div>
