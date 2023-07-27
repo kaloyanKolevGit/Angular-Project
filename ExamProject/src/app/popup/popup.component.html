@@ -1,9 +1,0 @@
-<div class="popup" [style.display]="popUp" >
-    <h3>Edit your todo: </h3>
-    <div class="popup-body">
-        <p class="popup-info">{{errMessage}}</p>
-        <input type="text" class="popup-input" value={{popUpName}} placeholder="Type in your ToDo">
-        <button (click)="onUpdate($event)" class="popup-btn accept">Update</button>
-        <button (click)="onCancel()" class="popup-btn cancel">Cancel</button>
-    </div>
-</div>
