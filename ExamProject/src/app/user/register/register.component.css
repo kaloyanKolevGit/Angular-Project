@@ -1,8 +1,14 @@
 /*login register forms  */
 
+.container {
+  margin-left: -30%;
+  margin-top: 100px;
+  margin-bottom: 500px;
+}
+
 form.login,
 form.register {
-  width: 40%;
+  width: 130%;
   margin: 2em auto 0;
   text-align: center;
 }

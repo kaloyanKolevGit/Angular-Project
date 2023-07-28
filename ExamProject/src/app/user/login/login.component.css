@@ -1,5 +1,11 @@
 /*login register forms  */
 
+.container {
+  margin-left: -30%;
+  margin-top: 200px;
+  margin-bottom: 500px;
+}
+
 form.login,
 form.register {
   width: 40%;
