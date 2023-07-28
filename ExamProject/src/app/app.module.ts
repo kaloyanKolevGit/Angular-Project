@@ -1,27 +1,43 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { NavigationComponent } from './navigation/navigation.component';
-import { VehicleCarCardComponent } from './vehicle-car-card/vehicle-car-card.component';
+
 import { AppRoutingModule } from './app-routing.module';
-import { LoginModule } from './login/login.module';
+import { AppComponent } from './app.component';
+import { CoreModule } from './core/core.module';
+import { MainComponent } from './main/main.component';
+import { ThemesListComponent } from './themes-list/themes-list.component';
+import { PostsListComponent } from './posts-list/posts-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './home/home.component';
+import { ThemeModule } from './theme/theme.module';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { appInterceptorProvider } from './app.interceptor';
+import { AuthenticateComponent } from './authenticate/authenticate.component';
+import { VehicleCarCardComponent } from './vehicle-car-card/vehicle-car-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    NavigationComponent,
-    VehicleCarCardComponent,
+    MainComponent,
+    ThemesListComponent,
+    PostsListComponent,
     HomeComponent,
+    WelcomeComponent,
+    NotFoundComponent,
+    AuthenticateComponent,
+    VehicleCarCardComponent,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    CoreModule,
+    SharedModule,
+    ThemeModule,
     AppRoutingModule,
-    LoginModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [appInterceptorProvider],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
