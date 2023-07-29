@@ -26,9 +26,8 @@ export class UserService implements OnDestroy {
   }
 
   login(email: string, password: string) {
-    const { apiUrl } = environment;
     return this.http
-      .post<User>(`${apiUrl}/login`, { email, password })
+      .post<User>(`/api/login`, { email, password })
       .pipe(tap((user) => this.user$$.next(user)));
   }
 
@@ -39,9 +38,8 @@ export class UserService implements OnDestroy {
     rePassword: string,
     tel: string
   ) {
-    const { apiUrl } = environment;
     return this.http
-      .post<User>(`${apiUrl}/register`, {
+      .post<User>(`/api/register`, {
         username,
         email,
         password,

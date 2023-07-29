@@ -1,18 +1,43 @@
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 </head>
-  <div class="wrapper">
+  <div [ngStyle]="isLoggedIn ? {'margin-left': '-18%'} : {'margin-left': '-12%'}" class="wrapper">
      <nav>
-        <input routerLink="/home" type="radio" name="tab" id="home" checked>
+         <!-- inputs -->
+        <input *ngIf="onHomeRoute" routerLink="/home" type="radio" name="tab" id="home" [checked]="true">
+        <input *ngIf="!onHomeRoute" routerLink="/home" type="radio" name="tab" id="home" [checked]="false">
         <input type="radio" name="tab" id="inbox">
-        <input type="radio" name="tab" id="contact">
-        <input routerLink="/auth/login" type="radio" name="tab" id="heart">
-        <input routerLink="/auth/register" type="radio" name="tab" id="about">
+
+        <ng-container *ngIf="!isLoggedIn">
+         <input *ngIf="onLoginRoute" routerLink="/auth/login" type="radio" name="tab" id="contact" [checked]="true">
+         <input *ngIf="!onLoginRoute" routerLink="/auth/login" type="radio" name="tab" id="contact" [checked]="false">
+         <input *ngIf="onRegisterRoute" routerLink="/auth/register" type="radio" name="tab" id="heart" [checked]="true">
+         <input *ngIf="!onRegisterRoute" routerLink="/auth/register" type="radio" name="tab" id="heart" [checked]="false">
+        </ng-container>
+
+        <ng-container *ngIf="isLoggedIn">
+         <input routerLink="" type="radio" name="tab" id="heart" [checked]="false">
+         <input type="radio" name="tab" id="contact" [checked]="false">
+         <input (click)="logout()" type="radio" name="tab" id="about" [checked]="false">
+        </ng-container>
+
+        <!-- labels -->
+
         <label for="home" class="home"><a ><i class="fas fa-home"></i>Home</a></label>
-        <label for="inbox" class="inbox"><a href="#"><i class="far fa-heart"></i>Liked</a></label>
-        <label for="contact" class="contact"><a href="#"><i class="far fa-envelope"></i>Listings</a></label>
-        <label for="heart" class="heart"><a><i class="far fa-user"></i>Login</a></label>
-        <label for="about" class="about"><a><i class="far fa-user"></i>Register</a></label>
-        <div class="tab"></div>
+        <label for="inbox" class="inbox"><a href="#"><i class="far fa-envelope"></i>Listings</a></label>
+
+        <ng-container *ngIf="!isLoggedIn">
+         <label for="contact" class="contact"><a href="#"><i class="far fa-user"></i>Login</a></label>
+         <label for="heart" class="heart"><a><i class="far fa-user"></i>Register</a></label>
+        </ng-container>
+
+        <ng-container *ngIf="isLoggedIn">
+         <label for="contact" class="contact"><a href="#"><i class="far fa-heart"></i>Liked</a></label>
+        <label for="heart" class="heart"><a><i class="far fa-user"></i>{{username}}</a></label>
+        <label for="about" class="about"><a><i class="far fa-user"></i>Log Out</a></label>
+        </ng-container>
+
+        <div *ngIf="isLoggedIn" [ngStyle]="{'width': '20.2%'}" class="tab"></div>
+        <div *ngIf="!isLoggedIn" [ngStyle]="{'width': '25%', '--transVal': '1.25'}" class="tab"></div>
      </nav>
   </div>

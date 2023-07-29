@@ -17,6 +17,18 @@ export class HeaderComponent {
     return this.userService.user?.username || '';
   }
 
+  get onLoginRoute(): boolean {
+    return this.router.url === '/auth/login'
+  }
+
+  get onRegisterRoute(): boolean {
+    return this.router.url === '/auth/register'
+  }
+
+  get onHomeRoute(): boolean {
+    return this.router.url === '/home'
+  }
+
   logout(): void {
     this.userService.logout().subscribe({
       next: () => {
