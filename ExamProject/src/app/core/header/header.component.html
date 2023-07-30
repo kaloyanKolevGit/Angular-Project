@@ -16,7 +16,7 @@
         </ng-container>
 
         <ng-container *ngIf="isLoggedIn">
-         <input routerLink="" type="radio" name="tab" id="heart" [checked]="false">
+         <input routerLink="/auth/profile" type="radio" name="tab" id="heart" [checked]="false">
          <input type="radio" name="tab" id="contact" [checked]="false">
          <input (click)="logout()" type="radio" name="tab" id="about" [checked]="false">
         </ng-container>
