@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { DEFAULT_EMAIL_DOMAINS } from 'src/app/shared/constants';
 import { appEmailValidator } from 'src/app/shared/validators/app-email-validator';
 import { UserService } from '../user.service';
+import { Router } from '@angular/router';
 
 interface Profile {
   username: string;
@@ -25,7 +26,7 @@ export class ProfileComponent implements OnInit {
   };
 
   form = this.fb.group({
-    username: ['', [Validators.required, Validators.minLength(5)]],
+    username: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(13)]],
     email: [
       '',
       [Validators.required, appEmailValidator(DEFAULT_EMAIL_DOMAINS)],
@@ -35,7 +36,7 @@ export class ProfileComponent implements OnInit {
     // persons: this.fb.array([]),
   });
 
-  constructor(private fb: FormBuilder, private userService: UserService) {}
+  constructor(private fb: FormBuilder, private userService: UserService, private router: Router) {}
 
   ngOnInit(): void {
     const { username, email, tel } = this.userService.user!;
@@ -59,6 +60,18 @@ export class ProfileComponent implements OnInit {
   toggleEditMode(): void {
     this.isEditMode = !this.isEditMode;
   }
+
+  logout(): void {
+    this.userService.logout().subscribe({
+      next: () => {
+        this.router.navigate(['/auth/login']);
+      },
+      error: () => {
+        this.router.navigate(['/auth/login']);
+      },
+    });
+  }
+
 
   saveProfileHandler(): void {
     if (this.form.invalid) {

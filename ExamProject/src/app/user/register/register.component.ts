@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent {
   form = this.fb.group({
-    username: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(15)]],
+    username: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(13)]],
     email: [
       '',
       [Validators.required, appEmailValidator(DEFAULT_EMAIL_DOMAINS)],

@@ -7,7 +7,7 @@ import { AuthActivate } from '../core/guards/auth.activate';
 
 const routes: Routes = [
   {
-    path: 'themes',
+    path: 'listings',
     children: [
       {
         path: '',
@@ -21,7 +21,7 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'add-theme',
+    path: 'add-listing',
     component: NewThemeComponent,
     canActivate: [AuthActivate],
   },

@@ -1,7 +1,7 @@
 <div class="container">
   <div class="profile">
     <img src="/assets/profile.png" alt="default user" />
-    <h3>User Info:</h3>
+    <h3>Profile information:</h3>
 
     <!-- READONLY MODE -->
     <ng-container *ngIf="!isEditMode">
@@ -15,9 +15,10 @@
       </div>
       <div class="flex">
         <p>Phone:</p>
-        <p>+359 {{ profileDetails.tel }}</p>
+        <p>{{ profileDetails.tel }}</p>
       </div>
-      <button class="edit-button" (click)="toggleEditMode()">Edit</button>
+      <button class="edit-button" (click)="toggleEditMode()">Edit <i class="fa fa-edit"></i></button>
+      <button class="logout-button" (click)="logout()">Log Out <i class="fa fa-sign-out"></i></button>
     </ng-container>
 
     <!-- EDIT MODE -->
@@ -36,6 +37,9 @@
           </p>
           <p class="error" *ngIf="form.get('username')?.errors?.['minlength']">
             Username's length should not be less than 5!
+          </p>
+          <p class="error" *ngIf="form.get('username')?.errors?.['maxlength']">
+            Username's length should not be more than 13!
           </p>
         </ng-container>
 
@@ -61,17 +65,12 @@
         <!-- telephone input -->
         <div class="flex">
           <p>Phone:</p>
-          <div>
-            <select name="select-tel" id="select-tel" class="tel">
-              <option value="00359">+359</option>
-            </select>
             <input type="text" id="tel" formControlName="tel" />
-          </div>
         </div>
 
         <!-- ACTIONS -->
-        <button class="red-button">Cancel</button>
         <button class="green-button">Save</button>
+        <button class="red-button">Cancel</button>
       </form>
     </ng-container>
   </div>

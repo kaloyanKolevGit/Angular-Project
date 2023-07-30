@@ -29,14 +29,12 @@ export class HeaderComponent {
     return this.router.url === '/home'
   }
 
-  logout(): void {
-    this.userService.logout().subscribe({
-      next: () => {
-        this.router.navigate(['/auth/login']);
-      },
-      error: () => {
-        this.router.navigate(['/auth/login']);
-      },
-    });
+  get onListingsRoute(): boolean {
+    return this.router.url.split('/')[0] === 'listings'
   }
+
+  get onProfileRoute(): boolean {
+    return this.router.url === '/auth/profile'
+  }
+
 }
