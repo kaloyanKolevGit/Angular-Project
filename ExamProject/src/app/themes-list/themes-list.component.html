@@ -45,17 +45,17 @@
             <i class='far fa-heart'></i>
         </div>
         <div class="main-images">
-            <img id="carImage" src='https://media.ed.edmunds-media.com/bmw/m8/2020/oem/2020_bmw_m8_coupe_competition_fq_oem_1_1600.jpg'>
+            <img id="carImage" src={{theme.imageUrl}}>
         </div>
             <div class="shoe-details">
-                <span class="car_name">{{ theme.themeName | slice : 25 }}</span>
-                <p>{{ theme.created_at }}</p>
+                <span class="car_name">{{ theme.themeName | slice : 20 }}</span>
+                <p>{{ theme.transmission }}</p>
                 <div class="year-container">
-                    <span>{{ theme.userId.username }}</span>   
+                    <span>{{ theme.year }}</span>   
                 </div>
         </div>
         <div class="price">
-            <span class="price_num">99999$</span>
+            <span class="price_num">{{theme.price}}$</span>
         </div>
         <div class="car-details-backround"></div>
     </div>

@@ -8,16 +8,18 @@ import { ApiService } from 'src/app/api.service';
   templateUrl: './new-theme.component.html',
   styleUrls: ['./new-theme.component.css'],
 })
+
 export class NewThemeComponent {
+
+
   constructor(private apiService: ApiService, private router: Router) {}
 
   newThemeSubmitHandler(form: NgForm): void {
     if (form.invalid) {
       return;
     }
-
-    const { themeName, postText } = form.value;
-    this.apiService.createTheme(themeName, postText).subscribe(() => {
+    const { carModel, transmission, year, price, postText, imageUrl} = form.value;
+    this.apiService.createTheme(carModel, postText, transmission, year, price, imageUrl).subscribe(() => {
       this.router.navigate(['/listings']);
     });
   }

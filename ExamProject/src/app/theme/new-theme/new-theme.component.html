@@ -5,11 +5,11 @@
     </div>
     <form #form="ngForm" (ngSubmit)="newThemeSubmitHandler(form)">
       <div class="new-theme-title">
-        <label for="themeName">Title <span class="red">*</span></label>
+        <label for="carModel">Car model <span class="red">*</span></label>
         <input
           type="text"
-          name="themeName"
-          id="themeName"
+          name="carModel"
+          id="carModel"
           ngModel
           #inputName="ngModel"
           required
@@ -26,8 +26,84 @@
         </ng-container>
       </div>
 
+      <div class="input-field">
+        <label for="transmission">Transmission<span class="red">*</span></label>
+        <input
+          type="text"
+          name="transmission"
+          id="transmission"
+          ngModel
+          #inputName="ngModel"
+          required
+          minlength="5"
+        />
+
+        <ng-container *ngIf="inputName.touched">
+          <p class="error" *ngIf="inputName.errors?.['required']">
+            Transmission is required.
+          </p>
+        </ng-container>
+      </div>
+
+      <div class="input-field">
+        <label for="year">Year <span class="red">*</span></label>
+        <input
+          type="text"
+          name="year"
+          id="year"
+          ngModel
+          #inputName="ngModel"
+          required
+          minlength="4"
+          maxlength="4"
+        />
+
+        <ng-container *ngIf="inputName.touched">
+          <p class="error" *ngIf="inputName.errors?.['required']">
+            Year is required.
+          </p>
+        </ng-container>
+      </div>
+
+      <div class="input-field">
+        <label for="price">Price <span class="red">*</span></label>
+        <input
+          type="text"
+          name="price"
+          id="price"
+          ngModel
+          #inputName="ngModel"
+          required
+        />
+
+        <ng-container *ngIf="inputName.touched">
+          <p class="error" *ngIf="inputName.errors?.['required']">
+            Price is required.
+          </p>
+        </ng-container>
+      </div>
+
+      <div class="input-field">
+        <label for="imageUrl">Image URL <span class="red">*</span></label>
+        <input
+          type="text"
+          name="imageUrl"
+          id="imageUrl"
+          ngModel
+          #inputName="ngModel"
+          required
+          minlength="5"
+        />
+
+        <ng-container *ngIf="inputName.touched">
+          <p class="error" *ngIf="inputName.errors?.['required']">
+            Image URL is required!
+          </p>
+        </ng-container>
+      </div>
+
       <div class="new-theme-content">
-        <label for="postText">Post <span class="red">*</span></label>
+        <label for="postText">Description <span class="red">*</span></label>
         <textarea
           type="text"
           name="postText"
