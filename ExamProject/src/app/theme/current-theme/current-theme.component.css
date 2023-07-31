@@ -308,6 +308,8 @@ border-top: 5px solid #ffffff;
   margin-top: 5%;
   margin-left: -5%;
   caret-color: transparent;
+  width:550px;
+  word-wrap: break-word;
 }
 
 /* Product Description */
