@@ -1,11 +1,11 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import * as moment from 'moment';
 
 @Pipe({
   name: 'elapsedTime',
 })
 export class ElapsedTimePipe implements PipeTransform {
-  transform(value: any, ...args: any[]) {
-    throw new Error('Method not implemented.');
+  transform(value: string, ...args: unknown[]): unknown {
+    return moment(value).fromNow();
   }
-
 }

@@ -4,6 +4,7 @@ import { ApiService } from 'src/app/api.service';
 import { Theme } from 'src/app/types/theme';
 import { UserService } from 'src/app/user/user.service';
 
+
 @Component({
   selector: 'app-current-theme',
   templateUrl: './current-theme.component.html',
@@ -28,9 +29,10 @@ export class CurrentThemeComponent implements OnInit {
 
   fetchTheme(): void {
     const id = this.activatedRoute.snapshot.params['themeId'];
-
     this.apiService.getTheme(id).subscribe((theme) => {
       this.theme = theme;
+      console.log(theme);
+      
     });
   }
 }

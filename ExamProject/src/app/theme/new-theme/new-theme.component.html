@@ -12,15 +12,11 @@
           ngModel
           #inputName="ngModel"
           required
-          minlength="5"
         />
 
         <ng-container *ngIf="inputName.touched">
           <p class="error" *ngIf="inputName.errors?.['required']">
-            Theme name is required.
-          </p>
-          <p class="error" *ngIf="inputName.errors?.['minlength']">
-            Theme name must be at least 5 characters long.
+            Car model is required.
           </p>
         </ng-container>
       </div>
@@ -65,7 +61,7 @@
       </div>
 
       <div class="input-box">
-        <span class="details">Price</span>
+        <span class="details">Price $</span>
         <input
           type="text"
           name="price"
@@ -102,7 +98,7 @@
       </div>
 
       <div class="input-box">
-        <label for="postText">Description <span class="red">*</span></label>
+        <span class="details">Description</span>
         <textarea
           type="text"
           name="postText"
@@ -125,9 +121,8 @@
         </ng-container>
       </div>
 
-      <div class="new-theme-buttons">
-        <button class="cancel">Cancel</button>
-        <button class="public" [disabled]="form.invalid">Post</button>
+      <div class="button">
+        <input [disabled]="form.invalid" type="submit" value="Create">
       </div>
     </div>
     </form>

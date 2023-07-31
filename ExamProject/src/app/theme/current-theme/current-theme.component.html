@@ -1,7 +1,5 @@
-<div class="container" *ngIf="theme">
-  <!-- theme content  -->
+<!-- <div class="container" *ngIf="theme">
   <div class="theme-content">
-    <!-- theme-title  -->
     <div class="theme-title">
       <div class="theme-name-wrapper">
         <div class="theme-name">
@@ -13,14 +11,13 @@
         <div class="subscribers">
           <p>
             Subscribers: <span>{{ theme.subscribers.length }}</span>
-          </p>
+          </p> -->
           <!-- <button class="subscribe">Subscribe</button>
                     <button class="unsubscribe">Unsubscribe</button> -->
-        </div>
+        <!-- </div>
       </div>
     </div>
 
-    <!-- comment  -->
     <div class="comment" *ngFor="let post of theme.posts">
       <header class="header">
         <p>
@@ -39,8 +36,6 @@
         </div>
       </div>
       <div class="footer">
-        <!-- <i class="fas fa-thumbs-up"></i>
-                <i class="fas fa-thumbs-down"></i> -->
         <p>
           <span> {{ post.likes.length }}</span> likes
         </p>
@@ -55,6 +50,42 @@
           <button>Post</button>
         </form>
       </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="container" *ngIf="theme">
+ 
+  <!-- Left Column / Headphones Image -->
+  <div class="left-column">
+    <img data-image="black" src="{{theme.imageUrl}}" alt="">
+  </div>
+ 
+ 
+  <!-- Right Column -->
+  <div class="right-column">
+ 
+    <!-- Product Description -->
+    <div class="product-description">
+      <span>{{theme.created_at | elapsedTime}}</span>
+      <h1>{{theme.themeName}}</h1>
+      <div class="grid-container">
+        <div class="grid-text">Transmission: {{theme.transmission}}</div>
+        <div class="year-container">
+          <span>{{theme.year}}</span>   
+      </div>
+      </div>
+      <p>The preferred choice of a vast range of acclaimed DJs. Punchy, bass-focused sound and
+         high isolation. Sturdy headband and on-ear cushions suitable for live performance The preferred choice of a vast range of acclaimed DJs. Punchy, bass-focused sound and</p>
+    </div>
+    <!-- Product Pricing -->
+    <div class="product-price">
+      <span>{{theme.price}}$</span>
+    </div>
+    <p class="border"></p>
+    <div class="contacts">
+      <p>Owner: {{theme.userId.username}}</p>
+      <p>Contact: {{theme.userId.tel}}</p>
     </div>
   </div>
 </div>
