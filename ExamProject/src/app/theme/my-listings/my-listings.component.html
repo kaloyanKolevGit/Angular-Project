@@ -1,0 +1,25 @@
+<div class="wrapper">
+  <h1>My listings</h1>
+  <div class="grid-container">
+    <div *ngFor="let theme of themesList" class="product-card">
+      <div class="logo-cart">
+        <!--<img src="images/logo.jpg" alt="logo">-->
+        <!-- <i class='far fa-heart'></i> -->
+      </div>
+      <div routerLink={{theme._id}} class="main-images">
+        <img id="carImage" src={{theme.imageUrl}}>
+      </div>
+      <div [routerLink]="theme._id" class="shoe-details">
+        <span class="car_name">{{ theme.themeName | slice : 23 }}</span>
+        <p>{{ theme.transmission }}</p>
+        <div class="year-container">
+          <span>{{ theme.year }}</span>
+        </div>
+      </div>
+      <div class="price">
+        <span class="price_num">{{theme.price}}$</span>
+      </div>
+      <div [routerLink]="theme._id" class="car-details-backround"></div>
+    </div>
+  </div>
+</div>

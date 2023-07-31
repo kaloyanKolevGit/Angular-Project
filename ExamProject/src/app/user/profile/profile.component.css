@@ -1,0 +1,142 @@
+p.error {
+  position:absolute;
+  border-radius: 0.3em;
+  color: rgb(251, 105, 105);
+  padding-top: 0;
+  font-size: 16px;
+  font-weight: 500;
+  margin-left: 5%;
+  margin-top: -1.2%;
+}
+
+.input-error {
+  border-left-color: red;
+}
+
+
+.profile {
+  width: 150%;
+  max-width: 500px;
+  height: 32rem;
+  margin: 2em auto 1rem;
+  padding: 0.5em;
+  border: 0.3em solid rgb(99, 180, 196);
+  border-radius: 0.5rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #444;
+  background: linear-gradient(135deg, #d35bff  20%, #005d82 100%);
+  box-shadow: 0 0 1em 0 #000;
+  text-align: center;
+  caret-color: transparent; 
+}
+
+.container {
+  margin-top: 30%;
+  margin-bottom: 156%;
+  margin-left: -9%;
+}
+
+.profile h3 {
+  text-decoration: underline;
+  font-size: 30px;
+  font-weight: bold;
+  color: aliceblue;
+}
+
+.profile img {
+  width: 7em;
+  height: 7em;
+  margin: auto;
+  display: block;
+}
+
+.flex {
+  display: flex;
+  height: 5rem;
+  color: rgb(255, 255, 255);
+}
+
+.flex p:first-child {
+  width: 35%;
+  text-align: center;
+  margin: 0.5em;
+  font-weight: bold;
+  margin-right: 10%;
+  font-size: 26px;
+}
+
+.flex p:last-child {
+  width: 55%;
+  text-align: left;
+  margin: 0.7em;
+  font-weight: 400;
+  margin-left: -11%;
+  font-size: 22px;
+}
+
+.profile button {
+  color: white;
+  border: none;
+  border-radius: 0.3em;
+  padding: 0.6em 1.2em;
+  outline: none;
+}
+
+.flex > input, 
+.flex > div {
+  width: 50%;
+  height: 35%;
+  margin-left: -60%;
+  text-align: left;
+  margin-left: -2.1em;
+  margin-top: 0.5em;
+  font-size: 18px;
+}
+
+button {
+  margin-top: 2%;
+} 
+
+button:hover {
+  cursor: pointer
+} 
+
+.edit-button {
+  width: 25%;
+  height: 8%;
+  background-color: #4cbafe;
+  font-size: 18px;
+  font-weight: bold;
+} 
+
+.logout-button {
+  width: 30%;
+  height: 8%;
+  background-color: #4cbafe;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 5%;
+} 
+
+.flex > div > input {
+  width: 77%;
+}
+
+.flex select {
+  padding: 0.17em 0;
+}
+
+.red-button {
+  background-color: #3f4950;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.green-button {
+  background-color: #60bdff;
+  font-size: 18px;
+  font-weight: bold;
+  width: 20%;
+  height: 8%;
+  margin-right: 2%;
+}

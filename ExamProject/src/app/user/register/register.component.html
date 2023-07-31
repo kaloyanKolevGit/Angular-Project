@@ -1,0 +1,114 @@
+<div class="container">
+  <div class="title">Registration</div>
+  <div class="content">
+    <form [formGroup]="form" (ngSubmit)="register()">
+      <div class="user-details">
+
+        <!-- Username -->
+        
+        <div class="input-box">
+          <span class="details">Username</span>
+          <input class="input-error"
+          type="text"
+          name="username"
+          id="username"
+          formControlName="username" type="text" placeholder="Enter your username" required>
+        </div>
+        <ng-container *ngIf="form.get('username')?.touched">
+          <p class="error" *ngIf="form.get('username')?.errors?.['required']">
+            Username is required!
+          </p>
+          <p class="error" *ngIf="form.get('username')?.errors?.['minlength']">
+            Username's length should not be less than 5!
+          </p>
+          <p class="error" *ngIf="form.get('username')?.errors?.['maxlength']">
+            Username's length should not be more than 13!
+          </p>
+        </ng-container>
+
+        <!-- Email -->
+
+        <div class="input-box">
+          <span class="details">Email</span>
+          <input type="email"
+          name="email"
+          id="email"
+          formControlName="email" type="text" placeholder="Enter your email" required>
+        </div>
+        <ng-container *ngIf="form.get('email')?.touched">
+          <p class="error" *ngIf="form.get('email')?.errors?.['required']">
+            Email is required!
+          </p>
+          <p
+            class="error"
+            *ngIf="form.get('email')?.errors?.['appEmailValidator']"
+          >
+            Email is not valid!
+          </p>
+        </ng-container>
+
+        <!-- Tel -->
+
+        <div class="input-box">
+          <span class="details">Phone Number</span>
+          <input type="text"
+          name="tel"
+          id="tel"
+          formControlName="tel" type="text" placeholder="Enter your number" required>
+        </div>
+
+        <!-- Password Group -->
+        
+        <ng-container formGroupName="passGroup">
+        <div class="input-box">
+          <span class="details">Password</span>
+          <input type="password"
+          name="password"
+          id="password"
+          formControlName="password" placeholder="Enter your password" required>
+        </div>
+        <ng-container *ngIf="form.get('passGroup')?.get('password')?.touched">
+          <p
+            class="error"
+            *ngIf="form.get('passGroup')?.get('password')?.errors?.['required']"
+          >
+            Password is required!
+          </p>
+          <p
+            class="error"
+            *ngIf="form.get('passGroup')?.get('password')?.errors?.['minlength']"
+          >
+            Password must be at least
+            {{
+              form.get('passGroup')?.get('password')?.errors?.['minlength']?.['requiredLength']
+            }}
+            characters!
+          </p>
+        </ng-container>
+        <div class="input-box">
+          <span class="details">Confirm Password</span>
+          <input   type="password"
+          name="rePassword"
+          id="rePassword"
+          formControlName="rePassword" placeholder="Confirm your password" required>
+        </div>
+        <ng-container *ngIf="form.get('passGroup')?.get('rePassword')?.touched">
+          <p
+            class="error"
+            *ngIf="form.get('passGroup')?.errors?.['matchPasswordsValidator'] ||
+             form.get('passGroup')?.get('rePassword')?.errors?.['required']"
+          >
+            Repeat Password does not match password!
+          </p>
+        </ng-container>
+      </ng-container>
+      </div>
+      <div class="button">
+        <input [disabled]="form.invalid" type="submit" value="Register">
+      </div>
+      <div class="signup-link">
+        You already have an account? <a routerLink="/auth/login">Login now</a>
+      </div>
+    </form>
+  </div>
+</div>
