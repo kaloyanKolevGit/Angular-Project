@@ -19,7 +19,8 @@
         <ng-container *ngIf="isLoggedIn">
          <input *ngIf="onProfileRoute"  type="radio" name="tab" id="about" [checked]="true">
          <input *ngIf="!onProfileRoute" type="radio" name="tab" id="about" [checked]="false">
-         <input type="radio" name="tab" id="heart" [checked]="false">
+         <input *ngIf="onAddListingRoute" type="radio" name="tab" id="heart" [checked]="true">
+         <input *ngIf="!onAddListingRoute" type="radio" name="tab" id="heart" [checked]="false">
          <input type="radio" name="tab" id="contact" [checked]="false">
         </ng-container>
 

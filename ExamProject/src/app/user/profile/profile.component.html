@@ -23,7 +23,7 @@
 
     <!-- EDIT MODE -->
     <ng-container *ngIf="isEditMode">
-      <form [formGroup]="form" (ngSubmit)="saveProfileHandler()">
+      <form [formGroup]="form">
         <!-- username input -->
         <div class="flex">
           <p>Username:</p>
@@ -69,8 +69,8 @@
         </div>
 
         <!-- ACTIONS -->
-        <button class="green-button">Save</button>
-        <button class="red-button">Cancel</button>
+        <button (click)="saveProfileHandler()" class="green-button">Save</button>
+        <button (click)="cancel()" class="red-button">Cancel</button>
       </form>
     </ng-container>
   </div>

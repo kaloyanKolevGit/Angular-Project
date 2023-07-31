@@ -85,4 +85,19 @@ export class ProfileComponent implements OnInit {
       this.toggleEditMode();
     });
   }
+
+  cancel(): void {
+    const { username, email, tel } = this.userService.user!;
+    this.profileDetails = {
+      username,
+      email,
+      tel,
+    };
+    this.form.setValue({
+      username,
+      email,
+      tel,
+    });
+    this.toggleEditMode();
+  }
 }

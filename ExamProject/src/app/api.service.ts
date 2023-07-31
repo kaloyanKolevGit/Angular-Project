@@ -21,6 +21,12 @@ export class ApiService {
     return this.http.get<Theme[]>(`${apiUrl}/themes`);
   }
 
+  getRecentListings(limit?: number) {
+    const { apiUrl } = environment;
+    const limitFilter = limit ? `?limit=${limit}` : '';
+    return this.http.get<Theme[]>(`${apiUrl}/themes/recentListings${limitFilter}`);
+  }
+
   createTheme(themeName: string, postText: string, transmission: string, year: string, price: string, imageUrl: string) {
     return this.http.post<Theme>('/api/themes', { themeName, transmission, year, price, postText, imageUrl});
   }

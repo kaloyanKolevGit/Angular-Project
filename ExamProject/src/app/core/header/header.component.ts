@@ -30,11 +30,14 @@ export class HeaderComponent {
   }
 
   get onListingsRoute(): boolean {
-    return this.router.url.split('/')[0] === 'listings'
+    return this.router.url.split('/')[1] === 'listings'
   }
 
   get onProfileRoute(): boolean {
     return this.router.url === '/auth/profile'
   }
 
+  get onAddListingRoute(): boolean {
+    return this.router.url === '/add-listing'
+  }
 }

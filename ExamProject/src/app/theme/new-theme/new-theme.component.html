@@ -1,11 +1,10 @@
 <div class="container">
-  <div class="new-theme-border">
-    <div class="header-background">
-      <span>New Theme</span>
-    </div>
+    <div class="title">Create new listing</div>
+    <div class="content">
     <form #form="ngForm" (ngSubmit)="newThemeSubmitHandler(form)">
-      <div class="new-theme-title">
-        <label for="carModel">Car model <span class="red">*</span></label>
+      <div class="user-details">
+      <div class="input-box">
+        <span class="details">Car model</span>
         <input
           type="text"
           name="carModel"
@@ -26,8 +25,8 @@
         </ng-container>
       </div>
 
-      <div class="input-field">
-        <label for="transmission">Transmission<span class="red">*</span></label>
+      <div class="input-box">
+        <span class="details">Transmission</span>
         <input
           type="text"
           name="transmission"
@@ -45,8 +44,8 @@
         </ng-container>
       </div>
 
-      <div class="input-field">
-        <label for="year">Year <span class="red">*</span></label>
+      <div class="input-box">
+        <span class="details">Year</span>
         <input
           type="text"
           name="year"
@@ -65,8 +64,8 @@
         </ng-container>
       </div>
 
-      <div class="input-field">
-        <label for="price">Price <span class="red">*</span></label>
+      <div class="input-box">
+        <span class="details">Price</span>
         <input
           type="text"
           name="price"
@@ -83,8 +82,8 @@
         </ng-container>
       </div>
 
-      <div class="input-field">
-        <label for="imageUrl">Image URL <span class="red">*</span></label>
+      <div class="input-box">
+        <span class="details">Image URL</span>
         <input
           type="text"
           name="imageUrl"
@@ -102,7 +101,7 @@
         </ng-container>
       </div>
 
-      <div class="new-theme-content">
+      <div class="input-box">
         <label for="postText">Description <span class="red">*</span></label>
         <textarea
           type="text"
@@ -130,6 +129,9 @@
         <button class="cancel">Cancel</button>
         <button class="public" [disabled]="form.invalid">Post</button>
       </div>
+    </div>
     </form>
   </div>
 </div>
+
+
